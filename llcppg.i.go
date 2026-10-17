@@ -3,4 +3,4 @@
 package libxml2
 
 const XGoPackage = true
-const LLGoPackage = "link: $(pkg-config --libs libxml-2.0);"
+const LLGoPackage = "link: $(pkg-config --libs libxml-2.0); -lxml2"
