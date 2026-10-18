@@ -77,18 +77,18 @@ type SchemaValidityErrorFunc = func(_llcppg_param1 unsafe.Pointer, _llcppg_param
 type SchemaValidityWarningFunc = func(_llcppg_param1 unsafe.Pointer, _llcppg_param2 *c.Char, __llgo_va_list ...any)
 
 // Schema parser context
-type SchemaParserCtxt = X_SchemaParserCtxt
+type SchemaParserCtxt X_SchemaParserCtxt
 type SchemaParserCtxtPtr = *SchemaParserCtxt
 
 // Schema validation context
-type SchemaValidCtxt = X_SchemaValidCtxt
+type SchemaValidCtxt X_SchemaValidCtxt
 type SchemaValidCtxtPtr = *SchemaValidCtxt
 
 // llgo:type C
 type SchemaValidityLocatorFunc = func(_llcppg_param1 unsafe.Pointer, _llcppg_param2 **c.Char, _llcppg_param3 *c.Ulong) c.Int
 
 // Interface to insert Schemas SAX validation in a SAX stream
-type SchemaSAXPlugStruct = X_SchemaSAXPlug
+type SchemaSAXPlugStruct X_SchemaSAXPlug
 type SchemaSAXPlugPtr = *SchemaSAXPlugStruct
 
 // Interfaces for parsing.

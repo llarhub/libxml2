@@ -11,7 +11,7 @@ type X_XIncludeCtxt struct {
 }
 
 // XInclude context
-type XIncludeCtxt = X_XIncludeCtxt
+type XIncludeCtxt X_XIncludeCtxt
 type XIncludeCtxtPtr = *XIncludeCtxt
 
 // standalone processing

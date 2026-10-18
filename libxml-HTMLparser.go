@@ -299,10 +299,8 @@ func (self *HtmlElemDesc) HtmlElementAllowedHere(_llcppg_param2 *Char) c.Int {
 	return 0
 }
 
-// llgo:link (*HtmlElemDesc).HtmlElementStatusHere C.htmlElementStatusHere
-func (self *HtmlElemDesc) HtmlElementStatusHere(_llcppg_param2 *HtmlElemDesc) HtmlStatus {
-	return 0
-}
+//go:linkname HtmlElementStatusHere C.htmlElementStatusHere
+func HtmlElementStatusHere(_llcppg_param1 *HtmlElemDesc, _llcppg_param2 *HtmlElemDesc) HtmlStatus
 
 // llgo:link (*Node).HtmlNodeStatus C.htmlNodeStatus
 func (self *Node) HtmlNodeStatus(_llcppg_param2 c.Int) HtmlStatus {

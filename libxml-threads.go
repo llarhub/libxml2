@@ -13,11 +13,11 @@ type X_RMutex struct {
 }
 
 // Mutual exclusion object
-type Mutex = X_Mutex
+type Mutex X_Mutex
 type MutexPtr = *Mutex
 
 // Reentrant mutual exclusion object
-type RMutex = X_RMutex
+type RMutex X_RMutex
 type RMutexPtr = *RMutex
 
 //go:linkname CheckThreadLocalStorage C.xmlCheckThreadLocalStorage

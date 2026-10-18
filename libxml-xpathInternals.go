@@ -63,15 +63,11 @@ func (self *NodeSet) XPathNodeSetContains(val *Node) c.Int {
 	return 0
 }
 
-// llgo:link (*NodeSet).XPathDifference C.xmlXPathDifference
-func (self *NodeSet) XPathDifference(nodes2 *NodeSet) *NodeSet {
-	return self
-}
+//go:linkname XPathDifference C.xmlXPathDifference
+func XPathDifference(nodes1 *NodeSet, nodes2 *NodeSet) *NodeSet
 
-// llgo:link (*NodeSet).XPathIntersection C.xmlXPathIntersection
-func (self *NodeSet) XPathIntersection(nodes2 *NodeSet) *NodeSet {
-	return self
-}
+//go:linkname XPathIntersection C.xmlXPathIntersection
+func XPathIntersection(nodes1 *NodeSet, nodes2 *NodeSet) *NodeSet
 
 // llgo:link (*NodeSet).XPathDistinctSorted C.xmlXPathDistinctSorted
 func (self *NodeSet) XPathDistinctSorted() *NodeSet {
@@ -83,50 +79,40 @@ func (self *NodeSet) XPathDistinct() *NodeSet {
 	return self
 }
 
-// llgo:link (*NodeSet).XPathHasSameNodes C.xmlXPathHasSameNodes
-func (self *NodeSet) XPathHasSameNodes(nodes2 *NodeSet) c.Int {
-	return 0
-}
+//go:linkname XPathHasSameNodes C.xmlXPathHasSameNodes
+func XPathHasSameNodes(nodes1 *NodeSet, nodes2 *NodeSet) c.Int
 
 // llgo:link (*NodeSet).XPathNodeLeadingSorted C.xmlXPathNodeLeadingSorted
 func (self *NodeSet) XPathNodeLeadingSorted(node *Node) *NodeSet {
 	return self
 }
 
-// llgo:link (*NodeSet).XPathLeadingSorted C.xmlXPathLeadingSorted
-func (self *NodeSet) XPathLeadingSorted(nodes2 *NodeSet) *NodeSet {
-	return self
-}
+//go:linkname XPathLeadingSorted C.xmlXPathLeadingSorted
+func XPathLeadingSorted(nodes1 *NodeSet, nodes2 *NodeSet) *NodeSet
 
 // llgo:link (*NodeSet).XPathNodeLeading C.xmlXPathNodeLeading
 func (self *NodeSet) XPathNodeLeading(node *Node) *NodeSet {
 	return self
 }
 
-// llgo:link (*NodeSet).XPathLeading C.xmlXPathLeading
-func (self *NodeSet) XPathLeading(nodes2 *NodeSet) *NodeSet {
-	return self
-}
+//go:linkname XPathLeading C.xmlXPathLeading
+func XPathLeading(nodes1 *NodeSet, nodes2 *NodeSet) *NodeSet
 
 // llgo:link (*NodeSet).XPathNodeTrailingSorted C.xmlXPathNodeTrailingSorted
 func (self *NodeSet) XPathNodeTrailingSorted(node *Node) *NodeSet {
 	return self
 }
 
-// llgo:link (*NodeSet).XPathTrailingSorted C.xmlXPathTrailingSorted
-func (self *NodeSet) XPathTrailingSorted(nodes2 *NodeSet) *NodeSet {
-	return self
-}
+//go:linkname XPathTrailingSorted C.xmlXPathTrailingSorted
+func XPathTrailingSorted(nodes1 *NodeSet, nodes2 *NodeSet) *NodeSet
 
 // llgo:link (*NodeSet).XPathNodeTrailing C.xmlXPathNodeTrailing
 func (self *NodeSet) XPathNodeTrailing(node *Node) *NodeSet {
 	return self
 }
 
-// llgo:link (*NodeSet).XPathTrailing C.xmlXPathTrailing
-func (self *NodeSet) XPathTrailing(nodes2 *NodeSet) *NodeSet {
-	return self
-}
+//go:linkname XPathTrailing C.xmlXPathTrailing
+func XPathTrailing(nodes1 *NodeSet, nodes2 *NodeSet) *NodeSet
 
 // llgo:link (*XPathContext).XPathRegisterNs C.xmlXPathRegisterNs
 func (self *XPathContext) XPathRegisterNs(prefix *Char, ns_uri *Char) c.Int {
@@ -288,10 +274,8 @@ func (self *XPathParserContext) XPathEvaluatePredicateResult(res *XPathObject) c
 func (self *XPathContext) XPathRegisterAllFunctions() {
 }
 
-// llgo:link (*NodeSet).XPathNodeSetMerge C.xmlXPathNodeSetMerge
-func (self *NodeSet) XPathNodeSetMerge(val2 *NodeSet) *NodeSet {
-	return self
-}
+//go:linkname XPathNodeSetMerge C.xmlXPathNodeSetMerge
+func XPathNodeSetMerge(val1 *NodeSet, val2 *NodeSet) *NodeSet
 
 // llgo:link (*NodeSet).XPathNodeSetDel C.xmlXPathNodeSetDel
 func (self *NodeSet) XPathNodeSetDel(val *Node) {

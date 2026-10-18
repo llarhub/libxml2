@@ -62,10 +62,8 @@ func (self *SchemaFacet) SchemaCheckFacet(typeDecl *SchemaType, ctxt *SchemaPars
 func (self *SchemaFacet) SchemaFreeFacet() {
 }
 
-// llgo:link (*SchemaVal).SchemaCompareValues C.xmlSchemaCompareValues
-func (self *SchemaVal) SchemaCompareValues(y *SchemaVal) c.Int {
-	return 0
-}
+//go:linkname SchemaCompareValues C.xmlSchemaCompareValues
+func SchemaCompareValues(x *SchemaVal, y *SchemaVal) c.Int
 
 // llgo:link (*SchemaType).SchemaGetBuiltInListSimpleTypeItemType C.xmlSchemaGetBuiltInListSimpleTypeItemType
 func (self *SchemaType) SchemaGetBuiltInListSimpleTypeItemType() *SchemaType {
@@ -123,10 +121,8 @@ func (self *SchemaVal) SchemaGetCanonValueWhtsp(retValue **Char, ws SchemaWhites
 	return 0
 }
 
-// llgo:link (*SchemaVal).SchemaValueAppend C.xmlSchemaValueAppend
-func (self *SchemaVal) SchemaValueAppend(cur *SchemaVal) c.Int {
-	return 0
-}
+//go:linkname SchemaValueAppend C.xmlSchemaValueAppend
+func SchemaValueAppend(prev *SchemaVal, cur *SchemaVal) c.Int
 
 // llgo:link (*SchemaVal).SchemaValueGetNext C.xmlSchemaValueGetNext
 func (self *SchemaVal) SchemaValueGetNext() *SchemaVal {

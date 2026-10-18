@@ -30,7 +30,7 @@ type X_ValidState struct {
 }
 
 // Validation state added for non-deterministic content model.
-type ValidState = X_ValidState
+type ValidState X_ValidState
 type ValidStatePtr = *ValidState
 
 // Report a validity error.
@@ -54,15 +54,15 @@ type ValidCtxt = X_ValidCtxt
 
 // An xmlValidCtxt is used for error reporting when validating.
 type ValidCtxtPtr = *ValidCtxt
-type NotationTable = X_HashTable
+type NotationTable X_HashTable
 type NotationTablePtr = *NotationTable
-type ElementTable = X_HashTable
+type ElementTable X_HashTable
 type ElementTablePtr = *ElementTable
-type AttributeTable = X_HashTable
+type AttributeTable X_HashTable
 type AttributeTablePtr = *AttributeTable
-type IDTable = X_HashTable
+type IDTable X_HashTable
 type IDTablePtr = *IDTable
-type RefTable = X_HashTable
+type RefTable X_HashTable
 type RefTablePtr = *RefTable
 
 // Notation
@@ -134,13 +134,13 @@ func (self *ValidCtxt) AddElementDecl(dtd *Dtd, name *Char, type_ ElementTypeVal
 	return nil
 }
 
-// llgo:link (*ElementTable).CopyElementTable C.xmlCopyElementTable
-func (self *ElementTable) CopyElementTable() *ElementTable {
+// llgo:link (*ElementTable).Copy C.xmlCopyElementTable
+func (self *ElementTable) Copy() *ElementTable {
 	return self
 }
 
-// llgo:link (*ElementTable).FreeElementTable C.xmlFreeElementTable
-func (self *ElementTable) FreeElementTable() {
+// llgo:link (*ElementTable).Free C.xmlFreeElementTable
+func (self *ElementTable) Free() {
 }
 
 // llgo:link (*Buffer).DumpElementTable C.xmlDumpElementTable
@@ -174,13 +174,13 @@ func (self *ValidCtxt) AddAttributeDecl(dtd *Dtd, elem *Char, name *Char, ns *Ch
 	return nil
 }
 
-// llgo:link (*AttributeTable).CopyAttributeTable C.xmlCopyAttributeTable
-func (self *AttributeTable) CopyAttributeTable() *AttributeTable {
+// llgo:link (*AttributeTable).Copy C.xmlCopyAttributeTable
+func (self *AttributeTable) Copy() *AttributeTable {
 	return self
 }
 
-// llgo:link (*AttributeTable).FreeAttributeTable C.xmlFreeAttributeTable
-func (self *AttributeTable) FreeAttributeTable() {
+// llgo:link (*AttributeTable).Free C.xmlFreeAttributeTable
+func (self *AttributeTable) Free() {
 }
 
 // llgo:link (*Buffer).DumpAttributeTable C.xmlDumpAttributeTable
@@ -203,8 +203,8 @@ func (self *ValidCtxt) AddID(doc *Doc, value *Char, attr *Attr) *ID {
 	return nil
 }
 
-// llgo:link (*IDTable).FreeIDTable C.xmlFreeIDTable
-func (self *IDTable) FreeIDTable() {
+// llgo:link (*IDTable).Free C.xmlFreeIDTable
+func (self *IDTable) Free() {
 }
 
 // llgo:link (*Doc).ID C.xmlGetID
@@ -229,8 +229,8 @@ func (self *ValidCtxt) AddRef(doc *Doc, value *Char, attr *Attr) *Ref {
 	return nil
 }
 
-// llgo:link (*RefTable).FreeRefTable C.xmlFreeRefTable
-func (self *RefTable) FreeRefTable() {
+// llgo:link (*RefTable).Free C.xmlFreeRefTable
+func (self *RefTable) Free() {
 }
 
 // llgo:link (*Doc).IsRef C.xmlIsRef

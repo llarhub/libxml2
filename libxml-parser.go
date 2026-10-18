@@ -568,9 +568,9 @@ type ParserNodeInfo = X_ParserNodeInfo
 type ParserNodeInfoPtr = *ParserNodeInfo
 type ParserNodeInfoSeq = X_ParserNodeInfoSeq
 type ParserNodeInfoSeqPtr = *ParserNodeInfoSeq
-type StartTag = X_StartTag
-type ParserNsData = X_ParserNsData
-type AttrHashBucket = X_AttrHashBucket
+type StartTag X_StartTag
+type ParserNsData X_ParserNsData
+type AttrHashBucket X_AttrHashBucket
 
 // Callback for custom resource loaders.
 //

@@ -92,7 +92,7 @@ type X_TextReader struct {
 }
 
 // xmlReader context
-type TextReader = X_TextReader
+type TextReader X_TextReader
 type TextReaderPtr = *TextReader
 
 // Error handling extensions

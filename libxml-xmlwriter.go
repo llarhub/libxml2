@@ -11,7 +11,7 @@ type X_TextWriter struct {
 }
 
 // Writer object
-type TextWriter = X_TextWriter
+type TextWriter X_TextWriter
 type TextWriterPtr = *TextWriter
 
 // Constructors & Destructor

@@ -52,7 +52,7 @@ type X_SaveCtxt struct {
 }
 
 // XML and HTML serializer
-type SaveCtxt = X_SaveCtxt
+type SaveCtxt X_SaveCtxt
 type SaveCtxtPtr = *SaveCtxt
 
 //go:linkname SaveToFd C.xmlSaveToFd

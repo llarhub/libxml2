@@ -497,7 +497,7 @@ type Buffer = X_Buffer
 type BufferPtr = *Buffer
 
 // Buffer with 64-bit support
-type Buf = X_Buf
+type Buf X_Buf
 type BufPtr = *Buf
 
 // Notation declaration
@@ -937,44 +937,30 @@ func (self *Doc) SetRootElement(root *Node) *Node {
 func (self *Node) SetName(name *Char) {
 }
 
-// llgo:link (*Node).AddChild C.xmlAddChild
-func (self *Node) AddChild(cur *Node) *Node {
-	return self
-}
+//go:linkname AddChild C.xmlAddChild
+func AddChild(parent *Node, cur *Node) *Node
 
-// llgo:link (*Node).AddChildList C.xmlAddChildList
-func (self *Node) AddChildList(cur *Node) *Node {
-	return self
-}
+//go:linkname AddChildList C.xmlAddChildList
+func AddChildList(parent *Node, cur *Node) *Node
 
-// llgo:link (*Node).Replace C.xmlReplaceNode
-func (self *Node) Replace(cur *Node) *Node {
-	return self
-}
+//go:linkname ReplaceNode C.xmlReplaceNode
+func ReplaceNode(old *Node, cur *Node) *Node
 
-// llgo:link (*Node).AddPrevSibling C.xmlAddPrevSibling
-func (self *Node) AddPrevSibling(elem *Node) *Node {
-	return self
-}
+//go:linkname AddPrevSibling C.xmlAddPrevSibling
+func AddPrevSibling(cur *Node, elem *Node) *Node
 
-// llgo:link (*Node).AddSibling C.xmlAddSibling
-func (self *Node) AddSibling(elem *Node) *Node {
-	return self
-}
+//go:linkname AddSibling C.xmlAddSibling
+func AddSibling(cur *Node, elem *Node) *Node
 
-// llgo:link (*Node).AddNextSibling C.xmlAddNextSibling
-func (self *Node) AddNextSibling(elem *Node) *Node {
-	return self
-}
+//go:linkname AddNextSibling C.xmlAddNextSibling
+func AddNextSibling(cur *Node, elem *Node) *Node
 
 // llgo:link (*Node).Unlink C.xmlUnlinkNode
 func (self *Node) Unlink() {
 }
 
-// llgo:link (*Node).TextMerge C.xmlTextMerge
-func (self *Node) TextMerge(second *Node) *Node {
-	return self
-}
+//go:linkname TextMerge C.xmlTextMerge
+func TextMerge(first *Node, second *Node) *Node
 
 // llgo:link (*Node).TextConcat C.xmlTextConcat
 func (self *Node) TextConcat(content *Char, len c.Int) c.Int {

@@ -35,7 +35,7 @@ type X_SchematronValidCtxt struct {
 }
 
 // Schematron schema
-type Schematron = X_Schematron
+type Schematron X_Schematron
 type SchematronPtr = *Schematron
 
 // Signature of an error callback from a Schematron validation
@@ -57,11 +57,11 @@ type SchematronValidityErrorFunc = func(_llcppg_param1 unsafe.Pointer, _llcppg_p
 type SchematronValidityWarningFunc = func(_llcppg_param1 unsafe.Pointer, _llcppg_param2 *c.Char, __llgo_va_list ...any)
 
 // Schematron parser context
-type SchematronParserCtxt = X_SchematronParserCtxt
+type SchematronParserCtxt X_SchematronParserCtxt
 type SchematronParserCtxtPtr = *SchematronParserCtxt
 
 // Schematron validation context
-type SchematronValidCtxt = X_SchematronValidCtxt
+type SchematronValidCtxt X_SchematronValidCtxt
 type SchematronValidCtxtPtr = *SchematronValidCtxt
 
 // Interfaces for parsing.

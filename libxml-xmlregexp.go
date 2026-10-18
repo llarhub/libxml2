@@ -13,11 +13,11 @@ type X_Regexp struct {
 }
 
 // A libxml regular expression
-type Regexp = X_Regexp
+type Regexp X_Regexp
 type RegexpPtr = *Regexp
 
 // A libxml progressive regular expression evaluation context
-type RegExecCtxt = X_RegExecCtxt
+type RegExecCtxt X_RegExecCtxt
 type RegExecCtxtPtr = *RegExecCtxt
 
 // Callback function when doing a transition in the automata

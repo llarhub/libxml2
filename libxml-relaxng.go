@@ -70,7 +70,7 @@ type X_RelaxNGValidCtxt struct {
 }
 
 // RelaxNG schema
-type RelaxNG = X_RelaxNG
+type RelaxNG X_RelaxNG
 type RelaxNGPtr = *RelaxNG
 
 // Signature of an error callback from a Relax-NG validation
@@ -92,11 +92,11 @@ type RelaxNGValidityErrorFunc = func(_llcppg_param1 unsafe.Pointer, _llcppg_para
 type RelaxNGValidityWarningFunc = func(_llcppg_param1 unsafe.Pointer, _llcppg_param2 *c.Char, __llgo_va_list ...any)
 
 // RelaxNG parser context
-type RelaxNGParserCtxt = X_RelaxNGParserCtxt
+type RelaxNGParserCtxt X_RelaxNGParserCtxt
 type RelaxNGParserCtxtPtr = *RelaxNGParserCtxt
 
 // RelaxNG validation context
-type RelaxNGValidCtxt = X_RelaxNGValidCtxt
+type RelaxNGValidCtxt X_RelaxNGValidCtxt
 type RelaxNGValidCtxtPtr = *RelaxNGValidCtxt
 
 //go:linkname RelaxNGInitTypes C.xmlRelaxNGInitTypes

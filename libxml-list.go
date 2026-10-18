@@ -15,13 +15,13 @@ type X_List struct {
 // Linked list item
 //
 // @deprecated Don't use in new code.
-type Link = X_Link
+type Link X_Link
 type LinkPtr = *Link
 
 // Linked list
 //
 // @deprecated Don't use in new code.
-type List = X_List
+type List X_List
 type ListPtr = *List
 
 // Callback function used to free data from a list.
@@ -155,9 +155,8 @@ func (self *List) Walk(walker ListWalker, user unsafe.Pointer) {
 func (self *List) ReverseWalk(walker ListWalker, user unsafe.Pointer) {
 }
 
-// llgo:link (*List).Merge C.xmlListMerge
-func (self *List) Merge(l2 *List) {
-}
+//go:linkname ListMerge C.xmlListMerge
+func ListMerge(l1 *List, l2 *List)
 
 // llgo:link (*List).Dup C.xmlListDup
 func (self *List) Dup() *List {
@@ -166,10 +165,8 @@ func (self *List) Dup() *List {
 
 // Link operators
 //
-// llgo:link (*List).Copy C.xmlListCopy
-func (self *List) Copy(old *List) c.Int {
-	return 0
-}
+//go:linkname ListCopy C.xmlListCopy
+func ListCopy(cur *List, old *List) c.Int
 
 // Link operators
 //

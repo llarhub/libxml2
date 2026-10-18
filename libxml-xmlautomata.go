@@ -15,11 +15,11 @@ type X_AutomataState struct {
 // A libxml automata description
 //
 // It can be compiled into a regexp
-type Automata = X_Automata
+type Automata X_Automata
 type AutomataPtr = *Automata
 
 // A state in the automata description
-type AutomataState = X_AutomataState
+type AutomataState X_AutomataState
 type AutomataStatePtr = *AutomataState
 
 // Building API

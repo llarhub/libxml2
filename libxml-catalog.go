@@ -29,7 +29,7 @@ type X_Catalog struct {
 }
 
 // XML catalog
-type Catalog = X_Catalog
+type Catalog X_Catalog
 type CatalogPtr = *Catalog
 
 // Operations on a given catalog.

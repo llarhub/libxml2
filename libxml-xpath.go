@@ -260,7 +260,7 @@ type XPathVariableLookupFunc = func(_llcppg_param1 unsafe.Pointer, _llcppg_param
 type XPathFuncLookupFunc = func(_llcppg_param1 unsafe.Pointer, _llcppg_param2 *Char, _llcppg_param3 *Char) XPathFunction
 
 // Compiled XPath expression
-type XPathCompExpr = X_XPathCompExpr
+type XPathCompExpr X_XPathCompExpr
 type XPathCompExprPtr = *XPathCompExpr
 
 //go:linkname XmlXPathNAN C.xmlXPathNAN
@@ -296,10 +296,8 @@ func (self *XPathObject) Copy() *XPathObject {
 
 // Conversion functions to basic types.
 //
-// llgo:link (*Node).XPathCmpNodes C.xmlXPathCmpNodes
-func (self *Node) XPathCmpNodes(node2 *Node) c.Int {
-	return 0
-}
+//go:linkname XPathCmpNodes C.xmlXPathCmpNodes
+func XPathCmpNodes(node1 *Node, node2 *Node) c.Int
 
 // Conversion functions to basic types.
 //

@@ -48,7 +48,7 @@ type X_Entity struct {
 	Flags        c.Int
 	ExpandedSize c.Ulong
 }
-type EntitiesTable = X_HashTable
+type EntitiesTable X_HashTable
 type EntitiesTablePtr = *EntitiesTable
 
 // llgo:link (*Doc).NewEntity C.xmlNewEntity
@@ -106,13 +106,13 @@ func (self *Doc) EncodeSpecialChars(input *Char) *Char {
 //go:linkname CreateEntitiesTable C.xmlCreateEntitiesTable
 func CreateEntitiesTable() *EntitiesTable
 
-// llgo:link (*EntitiesTable).CopyEntitiesTable C.xmlCopyEntitiesTable
-func (self *EntitiesTable) CopyEntitiesTable() *EntitiesTable {
+// llgo:link (*EntitiesTable).Copy C.xmlCopyEntitiesTable
+func (self *EntitiesTable) Copy() *EntitiesTable {
 	return self
 }
 
-// llgo:link (*EntitiesTable).FreeEntitiesTable C.xmlFreeEntitiesTable
-func (self *EntitiesTable) FreeEntitiesTable() {
+// llgo:link (*EntitiesTable).Free C.xmlFreeEntitiesTable
+func (self *EntitiesTable) Free() {
 }
 
 // llgo:link (*Buffer).DumpEntitiesTable C.xmlDumpEntitiesTable

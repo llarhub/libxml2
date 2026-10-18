@@ -25,11 +25,11 @@ type X_StreamCtxt struct {
 }
 
 // A compiled (XPath based) pattern to select nodes
-type Pattern = X_Pattern
+type Pattern X_Pattern
 type PatternPtr = *Pattern
 
 // State object for streaming interface
-type StreamCtxt = X_StreamCtxt
+type StreamCtxt X_StreamCtxt
 type StreamCtxtPtr = *StreamCtxt
 
 // llgo:link (*Pattern).Free C.xmlFreePattern

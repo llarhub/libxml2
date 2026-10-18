@@ -20,7 +20,7 @@ type X_Module struct {
 }
 
 // A handle to a dynamically loaded module
-type Module = X_Module
+type Module X_Module
 type ModulePtr = *Module
 
 //go:linkname ModuleOpen C.xmlModuleOpen

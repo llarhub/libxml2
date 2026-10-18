@@ -595,7 +595,7 @@ type X_SchemaVal struct {
 }
 
 // Schema value
-type SchemaVal = X_SchemaVal
+type SchemaVal X_SchemaVal
 type SchemaValPtr = *SchemaVal
 
 // Schema type

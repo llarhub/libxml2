@@ -13,7 +13,7 @@ type X_HashTable struct {
 // Hash table mapping strings to pointers
 //
 // Also supports lookup using two or three strings as key.
-type HashTable = X_HashTable
+type HashTable X_HashTable
 type HashTablePtr = *HashTable
 
 // Callback to free data from a hash.
